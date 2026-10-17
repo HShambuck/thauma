@@ -22,8 +22,8 @@ export default function FrictionSection() {
         tl.fromTo(".chaos-card",
           { x: (i) => chaos[i % chaos.length].x, y: (i) => chaos[i % chaos.length].y, rotation: (i) => chaos[i % chaos.length].r },
           { x: 0, y: 0, rotation: 0, stagger: 0.06, duration: 1, ease: "power2.inOut" }, 1)
-          .fromTo(".beam", { left: "-25%" }, { left: "120%", duration: 1.6, ease: "none" }, 0.6)
-          .to(".chaos-card", { borderColor: "#FF5A1F", backgroundColor: "rgba(255,90,31,0.08)", duration: 0.4, stagger: 0.05 }, 1.6)
+          .fromTo(".beam", { x: -200 }, { x: () => (root.current?.offsetWidth ?? 1400) + 200, duration: 1.6, ease: "none" }, 0.6)
+          .to(".node-glow", { opacity: 1, duration: 0.4, stagger: 0.05 }, 1.6)
           .fromTo(".friction-after", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, 2.2);
       });
       mm.add("(max-width: 767px)", () => {
@@ -35,13 +35,13 @@ export default function FrictionSection() {
 
   return (
     <section ref={root} className="relative flex min-h-screen items-center overflow-hidden bg-navy py-20">
-      <div className="beam pointer-events-none absolute inset-y-0 z-10 w-40 bg-gradient-to-r from-transparent via-brand/70 to-transparent blur-md" style={{ left: "-25%" }} />
+      <div className="beam pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-40 bg-gradient-to-r from-transparent via-brand/70 to-transparent will-change-transform md:block" />
       <Container className="relative">
         <h2 className="max-w-2xl font-heading text-3xl font-bold sm:text-5xl">{friction.title}</h2>
         <p className="mt-3 text-slate-400">{friction.sub}</p>
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
           {friction.cards.map((t) => (
-            <div key={t} className="chaos-card rounded-xl border border-white/15 bg-white/5 px-5 py-6 text-sm font-medium backdrop-blur sm:text-base">{t}</div>
+            <div key={t} className="chaos-card relative rounded-xl border border-white/15 bg-white/5 px-5 py-6 text-sm font-medium will-change-transform sm:text-base"><span className="node-glow pointer-events-none absolute inset-0 rounded-xl border border-brand bg-brand/10 opacity-0" />{t}</div>
           ))}
         </div>
         <p className="friction-after mt-10 font-heading text-xl font-semibold text-brand md:opacity-0">{friction.after}</p>

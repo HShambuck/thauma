@@ -11,7 +11,7 @@ export default function Pillars() {
   useGSAP(
     () => {
       const st = { trigger: root.current, start: "top 85%", end: "top 25%", scrub: true };
-      gsap.fromTo(root.current, { backgroundColor: "#0F172A" }, { backgroundColor: "#FFFFFF", ease: "none", scrollTrigger: st });
+      gsap.fromTo(".bg-white-layer", { opacity: 0 }, { opacity: 1, ease: "none", scrollTrigger: st });
       gsap.fromTo(".pillar-title", { color: "#FFFFFF" }, { color: "#0F172A", ease: "none", scrollTrigger: st });
       const reveal = { trigger: root.current, start: "top 55%" };
       gsap.from(".pillar-left", { x: -120, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: reveal });
@@ -30,8 +30,8 @@ export default function Pillars() {
   );
 
   return (
-    <section ref={root} className="bg-navy py-24">
-      <Container>
+    <section ref={root} className="relative bg-navy py-24"><div className="bg-white-layer absolute inset-0 bg-white opacity-0" />
+      <Container className="relative">
         <h2 className="pillar-title mb-14 max-w-2xl font-heading text-3xl font-bold sm:text-5xl">{pillars.title}</h2>
         <div className="grid gap-6 md:grid-cols-2">
           <div className={card + " pillar-left"}>

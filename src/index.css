@@ -17,3 +17,11 @@ a, button, [role="button"], summary, select, label[for] { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Perf: backdrop blur is GPU-expensive, so only on capable desktops */
+.glass { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+}
+@keyframes flow { to { stroke-dashoffset: -24; } }
+.flow-line { stroke-dasharray: 6 6; animation: flow 1s linear infinite; }

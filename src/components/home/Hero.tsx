@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Play, Zap, Camera as CamIcon } from "lucide-react";
 import { siteContent } from "@/content/siteContent";
-import { gsap, SplitText, useGSAP } from "@/animations/registerGsap";
+import { gsap, ScrollTrigger, SplitText, useGSAP } from "@/animations/registerGsap";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 
@@ -20,14 +20,17 @@ export default function Hero() {
           .from(".float-card", { y: 60, opacity: 0, scale: 0.9, stagger: 0.15, duration: 1, ease: "power3.out" }, "-=0.8");
 
         // gentle idle float (all screens)
-        gsap.to(".float-card", { y: "+=12", duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1, stagger: 0.4 });
+        const floats = gsap.to(".float-card", { y: "+=12", duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1, stagger: 0.4 });
+        ScrollTrigger.create({ trigger: root.current, start: "top top", end: "bottom top", onToggle: (s) => (s.isActive ? floats.play() : floats.pause()) });
 
         // mouse parallax (desktop pointer only)
         if (window.matchMedia("(pointer: fine)").matches) {
+          const qx = gsap.quickTo(".parallax", "x", { duration: 0.8, ease: "power2.out" });
+          const qy = gsap.quickTo(".parallax", "y", { duration: 0.8, ease: "power2.out" });
           const move = (e: MouseEvent) => {
             const x = e.clientX / window.innerWidth - 0.5;
             const y = e.clientY / window.innerHeight - 0.5;
-            gsap.to(".parallax", { x: x * 30, y: y * 20, duration: 0.8, ease: "power2.out" });
+            qx(x * 30); qy(y * 20);
           };
           window.addEventListener("mousemove", move);
           return () => window.removeEventListener("mousemove", move);
@@ -37,11 +40,11 @@ export default function Hero() {
     { scope: root }
   );
 
-  const glass = "float-card rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl shadow-2xl";
+  const glass = "float-card glass rounded-2xl p-4 will-change-transform";
 
   return (
     <section ref={root} className="relative overflow-hidden bg-navy pt-32 pb-20 lg:pt-40 lg:pb-28">
-      <div className="pointer-events-none absolute -right-40 top-10 h-[480px] w-[480px] rounded-full bg-brand/20 blur-[140px]" />
+      <div className="pointer-events-none absolute -right-40 top-10 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(255,90,31,0.28),transparent_70%)]" />
       <Container className="relative grid items-center gap-14 lg:grid-cols-2">
         <div>
           <p className="hero-fade mb-5 flex items-center gap-2 text-xs tracking-[0.2em] text-white/70">

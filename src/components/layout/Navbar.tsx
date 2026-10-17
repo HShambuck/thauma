@@ -19,7 +19,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all", scrolled || open ? "border-b border-white/10 bg-navy/80 backdrop-blur-xl" : "bg-transparent")}>
+    <header className={cn("fixed inset-x-0 top-0 z-50 transition-colors", scrolled || open ? "border-b border-white/10 bg-navy/80 backdrop-blur-xl" : "bg-transparent")}>
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-center gap-2 font-heading text-xl font-bold tracking-wide">
           <span className="grid h-8 w-8 place-items-center rounded-md bg-brand text-white">T</span>

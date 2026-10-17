@@ -5,5 +5,6 @@ import { useGSAP } from "@gsap/react";
 
 // Register plugins ONCE for the whole app.
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
+ScrollTrigger.config({ ignoreMobileResize: true, limitCallbacks: true });
 
 export { gsap, ScrollTrigger, SplitText, useGSAP };

@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import LenisProvider from "@/animations/LenisProvider";
 import { ScrollTrigger } from "@/animations/registerGsap";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
-import Services from "@/pages/Services";
-import About from "@/pages/About";
-import Work from "@/pages/Work";
+const Services = lazy(() => import("@/pages/Services"));
+const About = lazy(() => import("@/pages/About"));
+const Work = lazy(() => import("@/pages/Work"));
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -28,12 +28,14 @@ export default function App() {
     <LenisProvider>
       <ScrollManager />
       <Navbar />
-      <Routes>
+      <Suspense fallback={null}>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
       </Routes>
+      </Suspense>
       <Footer />
     </LenisProvider>
   );

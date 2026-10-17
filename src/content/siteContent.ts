@@ -102,6 +102,59 @@ export const siteContent = {
     bookLabel: "Book a 15-Min Strategy Call",
   },
 
+  servicesPage: {
+    hero: {
+      eyebrow: "SOLUTIONS & TECH STACK",
+      title: "Engineering and media depth.",
+      sub: "Serious infrastructure, intelligent automation and studio-grade media, built to work as one system.",
+    },
+    layers: [
+      { id: "ai", icon: "bot", tone: "dark", title: "AI & Operational Automation Layer",
+        blurb: "Software that works while you sleep.",
+        items: [
+          { title: "Custom Business AI Agents", desc: "Autonomous agents that manage social handles, post content, parse DMs, triage support and alert team leads." },
+          { title: "Intelligent Chatbots & NLP", desc: "Assistants trained on your catalogue, price list and business logic for instant lead qualification." },
+        ] },
+      { id: "cloud", icon: "cloud", tone: "light", title: "Cloud Architecture & Engineering (AWS Serverless)",
+        blurb: "Fast, secure and billed only for what you use.",
+        items: [
+          { title: "High-Performance Web Apps & PWAs", desc: "Fast, SEO-optimised web systems built with modern frameworks." },
+          { title: "Custom Analytics & Order Tracking", desc: "Real-time dashboards for inventory, fulfilment speed and customer retention." },
+          { title: "Omnichannel Payment Gateways", desc: "Mobile Money (MTN, Telecel, AT) and card processing through Paystack and Hubtel." },
+        ] },
+      { id: "media", icon: "film", tone: "dark", title: "Media Production & Brand Identity",
+        blurb: "Content that makes your brand impossible to ignore.",
+        items: [
+          { title: "Studio Videography & Editing", desc: "Commercial-grade product videos, brand documentaries and high-converting ad reels." },
+          { title: "Visual Brand Identity Systems", desc: "Logos, typography, packaging design and visual guidelines." },
+        ] },
+    ],
+    techStack: {
+      title: "The stack behind the wonder",
+      groups: [
+        { group: "Frontend", chips: ["React", "Vite", "TypeScript", "Tailwind CSS", "GSAP", "PWA"] },
+        { group: "Cloud", chips: ["AWS Lambda", "API Gateway", "DynamoDB", "S3", "CloudFront"] },
+        { group: "AI & Automation", chips: ["LLM Agents", "NLP", "WhatsApp API", "Webhooks"] },
+        { group: "Payments", chips: ["MTN MoMo", "Telecel Cash", "AT Money", "Paystack", "Hubtel"] },
+        { group: "Media", chips: ["Studio Video", "Motion Graphics", "Colour Grading", "Photography"] },
+      ],
+    },
+    blueprint: {
+      title: "Architecture Blueprint",
+      sub: "Hover or tap a node to see how data flows from your media campaign to the serverless backend.",
+      connected: "Connected to",
+      idle: "Select a node to explore the flow.",
+      nodes: [
+        { id: "video", label: "Media", x: 110, y: 90, desc: "Reels and brand content drive traffic into your web app." },
+        { id: "payments", label: "Payments", x: 110, y: 310, desc: "MoMo and card payments confirm orders instantly." },
+        { id: "cloud", label: "Serverless", x: 400, y: 200, desc: "API Gateway and Lambda run the backend, scaling with demand." },
+        { id: "ai", label: "AI Agent", x: 690, y: 90, desc: "Handles DMs, qualifies leads, triages support and alerts your team." },
+        { id: "analytics", label: "Analytics", x: 690, y: 310, desc: "Live dashboards for inventory, fulfilment speed and retention." },
+      ],
+      edges: [["video", "cloud"], ["payments", "cloud"], ["ai", "cloud"], ["analytics", "cloud"], ["ai", "analytics"]],
+    },
+  },
+
   footer: {
     blurb: "Engineering wonder, unlocking growth.",
     copyright: "Thauma Digital Solutions. All rights reserved.",
