@@ -104,31 +104,50 @@ export const siteContent = {
 
   servicesPage: {
     hero: {
-      eyebrow: "SOLUTIONS & TECH STACK",
-      title: "Engineering and media depth.",
-      sub: "Serious infrastructure, intelligent automation and studio-grade media, built to work as one system.",
+      eyebrow: "WHAT WE DO",
+      title: "Credibility that gets you seen. Technology that gets you sales.",
+      sub: "We manage your branding and socials, and we build custom tech solutions. Use one, or combine both.",
     },
-    layers: [
-      { id: "ai", icon: "bot", tone: "dark", title: "AI & Operational Automation Layer",
-        blurb: "Software that works while you sleep.",
-        items: [
-          { title: "Custom Business AI Agents", desc: "Autonomous agents that manage social handles, post content, parse DMs, triage support and alert team leads." },
-          { title: "Intelligent Chatbots & NLP", desc: "Assistants trained on your catalogue, price list and business logic for instant lead qualification." },
-        ] },
-      { id: "cloud", icon: "cloud", tone: "light", title: "Cloud Architecture & Engineering (AWS Serverless)",
-        blurb: "Fast, secure and billed only for what you use.",
-        items: [
-          { title: "High-Performance Web Apps & PWAs", desc: "Fast, SEO-optimised web systems built with modern frameworks." },
-          { title: "Custom Analytics & Order Tracking", desc: "Real-time dashboards for inventory, fulfilment speed and customer retention." },
-          { title: "Omnichannel Payment Gateways", desc: "Mobile Money (MTN, Telecel, AT) and card processing through Paystack and Hubtel." },
-        ] },
-      { id: "media", icon: "film", tone: "dark", title: "Media Production & Brand Identity",
-        blurb: "Content that makes your brand impossible to ignore.",
-        items: [
-          { title: "Studio Videography & Editing", desc: "Commercial-grade product videos, brand documentaries and high-converting ad reels." },
-          { title: "Visual Brand Identity Systems", desc: "Logos, typography, packaging design and visual guidelines." },
-        ] },
+    cta: { label: "Discuss your project", href: "/work#contact" },
+    services: [
+      { id: "media", icon: "clapper", title: "Creative Media & Branding",
+        desc: "High-production video content, professional photography, and visual brand identity that establish immediate market authority.",
+        points: ["Video production", "Professional photography", "Visual brand identity", "Social media management"] },
+      { id: "web", icon: "code", title: "Custom Web & Application Development",
+        desc: "High-performance, SEO-optimized web applications with integrated payment gateways (Mobile Money and Cards), automated order tracking, and custom features tailored to your operations.",
+        points: ["SEO-optimised web apps", "Mobile Money and card payments", "Automated order tracking", "Custom features for your business"] },
+      { id: "ops", icon: "bot", title: "Automated Account Operations",
+        desc: "Internal AI-driven workflows that streamline content scheduling, lead triaging, and social media analytics, ensuring consistent audience engagement with minimal manual friction.",
+        points: ["Content scheduling", "Lead triaging", "Social media analytics", "AI agents for routine tasks"] },
     ],
+    packages: {
+      title: "Packages that combine media and tech",
+      sub: "Brands grow fastest when creative and technology work together. Every package is tailored to your business.",
+      note: "We only recommend advanced features when they will genuinely streamline your processes.",
+      items: [
+        { id: "brand", name: "Brand & Socials", tag: "Media-led",
+          desc: "We manage your branding and social presence so your business looks credible and gets seen.",
+          includes: ["Visual brand identity", "Professional photo and video content", "Social media management", "Content scheduling and analytics"] },
+        { id: "web", name: "Professional Website", tag: "Media + Web",
+          desc: "A professional website built around your brand and linked to your socials.",
+          includes: ["Custom, SEO-optimised website", "Linked to your social channels", "Brand-consistent design", "Fast, mobile-first build"] },
+        { id: "eco", name: "Full Growth Ecosystem", tag: "Media + Web App + Automation", featured: true,
+          desc: "A custom web application backed by your branding and socials, built around how your business actually runs.",
+          includes: ["Everything in Professional Website", "Custom web app for your operations"],
+          conditionalLabel: "Added only if your business needs it",
+          conditional: ["AI integration", "Mobile Money and card payments", "Order tracking", "AI agent to automate tasks"] },
+      ],
+    },
+    oneOff: {
+      title: "Need just one thing? We do standalone work too.",
+      sub: "No package required. Pay for exactly what you need.",
+      items: [
+        { icon: "code", title: "Custom Systems", desc: "A tailor-made system or application built for your operations." },
+        { icon: "camera", title: "Event Photography & Videography", desc: "Professional coverage for your event, launch or shoot." },
+        { icon: "pen", title: "Graphic Design", desc: "Flyers, logos, social graphics and more as a one-time job." },
+        { icon: "music", title: "Video & Sound Editing", desc: "Polished edits, colour grading and audio clean-up for your footage." },
+      ],
+    },
     techStack: {
       title: "The stack behind the wonder",
       groups: [

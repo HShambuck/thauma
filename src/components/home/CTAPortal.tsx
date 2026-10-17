@@ -5,6 +5,7 @@ import { gsap, useGSAP } from "@/animations/registerGsap";
 import { apiPost } from "@/lib/api/client";
 import { env } from "@/lib/env";
 import Container from "@/components/ui/Container";
+import Wave from "@/components/ui/Wave";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -39,7 +40,7 @@ export default function CTAPortal() {
   const input = "w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 outline-none focus:border-brand";
 
   return (
-    <section ref={root} className="bg-navy py-24">
+    <section ref={root} className="relative bg-navy pt-32 pb-24"><Wave className="text-white" />
       <Container>
         <div className="cta-card grid gap-10 border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] p-8 sm:p-14 lg:grid-cols-2">
           <div>

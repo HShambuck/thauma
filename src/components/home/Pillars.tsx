@@ -3,6 +3,7 @@ import { Clapperboard, Cloud, Check } from "lucide-react";
 import { siteContent } from "@/content/siteContent";
 import { gsap, useGSAP } from "@/animations/registerGsap";
 import Container from "@/components/ui/Container";
+import Wave from "@/components/ui/Wave";
 
 export default function Pillars() {
   const { pillars } = siteContent;
@@ -30,7 +31,7 @@ export default function Pillars() {
   );
 
   return (
-    <section ref={root} className="relative bg-navy py-24"><div className="bg-white-layer absolute inset-0 bg-white opacity-0" />
+    <section ref={root} className="relative bg-navy pt-32 pb-24"><div className="bg-white-layer absolute inset-0 bg-white opacity-0" /><Wave className="text-navy" />
       <Container className="relative">
         <h2 className="pillar-title mb-14 max-w-2xl font-heading text-3xl font-bold sm:text-5xl">{pillars.title}</h2>
         <div className="grid gap-6 md:grid-cols-2">

@@ -4,6 +4,7 @@ import { Code2, Camera, Cloud, Lightbulb } from "lucide-react";
 import { siteContent } from "@/content/siteContent";
 import { gsap, useGSAP } from "@/animations/registerGsap";
 import Container from "@/components/ui/Container";
+import Wave from "@/components/ui/Wave";
 
 const icons = { code: Code2, camera: Camera, cloud: Cloud, bulb: Lightbulb } as const;
 
@@ -20,7 +21,7 @@ export default function ServiceStrip() {
   );
 
   return (
-    <section ref={root} className="bg-white py-14">
+    <section ref={root} className="relative bg-white pt-24 pb-14"><Wave className="text-navy" />
       <Container className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {siteContent.serviceStrip.map((s) => {
           const Icon = icons[s.icon as keyof typeof icons];

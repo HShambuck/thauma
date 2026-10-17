@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { siteContent } from "@/content/siteContent";
 import Container from "@/components/ui/Container";
+import Wave from "@/components/ui/Wave";
 import { cn } from "@/lib/utils";
 
 export default function ArchitectureBlueprint() {
@@ -13,7 +14,7 @@ export default function ArchitectureBlueprint() {
   const linked = active ? connected(active) : [];
 
   return (
-    <section className="bg-navy py-20">
+    <section className="relative bg-navy pt-32 pb-20"><Wave className="text-slate-50" />
       <Container>
         <h2 className="font-heading text-2xl font-bold sm:text-4xl">{bp.title}</h2>
         <p className="mt-3 max-w-xl text-slate-400">{bp.sub}</p>

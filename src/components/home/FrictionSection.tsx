@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { siteContent } from "@/content/siteContent";
 import { gsap, useGSAP } from "@/animations/registerGsap";
 import Container from "@/components/ui/Container";
+import Wave from "@/components/ui/Wave";
 
 const chaos = [
   { x: -220, y: -110, r: -14 }, { x: 160, y: 90, r: 10 }, { x: -80, y: 150, r: -7 },
@@ -34,7 +35,7 @@ export default function FrictionSection() {
   );
 
   return (
-    <section ref={root} className="relative flex min-h-screen items-center overflow-hidden bg-navy py-20">
+    <section ref={root} className="relative flex min-h-screen items-center overflow-hidden bg-navy pt-32 pb-20"><Wave className="text-white" />
       <div className="beam pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-40 bg-gradient-to-r from-transparent via-brand/70 to-transparent will-change-transform md:block" />
       <Container className="relative">
         <h2 className="max-w-2xl font-heading text-3xl font-bold sm:text-5xl">{friction.title}</h2>
