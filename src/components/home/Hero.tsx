@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Play, Zap, Camera as CamIcon } from "lucide-react";
+import { ArrowDown, Zap, Camera as CamIcon } from "lucide-react";
 import { siteContent } from "@/content/siteContent";
 import { gsap, ScrollTrigger, SplitText, useGSAP } from "@/animations/registerGsap";
 import Button from "@/components/ui/Button";
@@ -61,8 +61,8 @@ export default function Hero() {
           <p className="hero-fade mt-6 max-w-lg text-base text-slate-300">{hero.sub}</p>
           <div className="hero-fade mt-8 flex flex-wrap items-center gap-4">
             <Button href={hero.primaryCta.href}>{hero.primaryCta.label} &rarr;</Button>
-            <Button variant="ghost" className="px-2">
-              <span className="grid h-10 w-10 place-items-center rounded-full border border-white/30"><Play size={14} fill="currentColor" /></span>
+            <Button href={hero.secondaryCta.href} variant="ghost" className="px-2">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-white/30"><ArrowDown size={14} /></span>
               {hero.secondaryCta.label}
             </Button>
           </div>

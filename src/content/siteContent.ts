@@ -23,11 +23,11 @@ export const siteContent = {
 
   hero: {
     eyebrow: ["TECH", "CREATIVE", "IMPACT"],
-    headlineLead: "We Build Media & Digital Systems That",
-    headlineHighlight: "Scale Businesses.",
-    sub: "Thauma is a tech and creative agency helping African brands turn ideas into powerful digital products, stunning visuals and scalable solutions.",
+    headlineLead: "Engineering Wonder,",
+    headlineHighlight: "Unlocking Growth.",
+    sub: "Thauma fuses high-end media branding with custom cloud and AI engineering, so your business gets seen, trusted and run smoothly.",
     primaryCta: { label: "Supercharge Your Business", href: "/work#contact" },
-    secondaryCta: { label: "Watch Showreel" },
+    secondaryCta: { label: "Explore Solutions", href: "/services" },
     cards: {
       growth: { label: "Total Growth", value: "+248%", note: "Last 30 days" }, // REPLACE
       momo: {
@@ -72,12 +72,12 @@ export const siteContent = {
   pillars: {
     title: "Two pillars. One growth engine.",
     left: {
-      title: "Media & Visual Identity",
-      items: ["High-definition video reels", "Studio product photography", "Brand storytelling"],
+      title: "Media, Socials & Branding",
+      items: ["High-production video content", "Professional photography", "Strategic social media management", "Targeted advertising campaigns", "Brand identity that builds instant trust"],
     },
     right: {
-      title: "AI & Cloud Infrastructure",
-      items: ["Serverless web apps", "Autonomous AI agents", "Automated order tracking", "Custom analytics", "MoMo & card gateways"],
+      title: "Custom Tech & AI Engineering",
+      items: ["Serverless cloud architecture (AWS)", "Custom web and mobile applications", "Automated order tracking", "Mobile Money and card payment integrations", "AI agents that automate business workflows"],
     },
   },
 
@@ -109,6 +109,17 @@ export const siteContent = {
       sub: "We manage your branding and socials, and we build custom tech solutions. Use one, or combine both.",
     },
     cta: { label: "Discuss your project", href: "/work#contact" },
+    chapters: [
+      { id: "media", step: "Service 01", label: "Creative Media & Branding", title: "Authority from the very first impression.",
+        story: "High-production video content, professional photography, and visual brand identity that establish immediate market authority. We also run your socials, so that authority shows up every single day.",
+        points: ["Video production", "Professional photography", "Visual brand identity", "Social media management and ads"], visual: "media" },
+      { id: "web", step: "Service 02", label: "Custom Web & Application Development", title: "Software built around the way you run.",
+        story: "High-performance, SEO-optimized web applications with integrated payment gateways (Mobile Money and cards), automated order tracking, and custom features tailored to your operations.",
+        points: ["SEO-optimised web apps", "Mobile Money and card payments", "Automated order tracking", "Custom features for your business"], visual: "web" },
+      { id: "ops", step: "Service 03", label: "Automated Account Operations", title: "Consistent engagement. Minimal manual friction.",
+        story: "Internal AI-driven workflows that streamline content scheduling, lead triaging and social media analytics, so your audience stays engaged without your team chasing every task.",
+        points: ["Content scheduling", "Lead triaging", "Social media analytics", "AI agents for routine tasks"], visual: "ops" },
+    ],
     services: [
       { id: "media", icon: "clapper", title: "Creative Media & Branding",
         desc: "High-production video content, professional photography, and visual brand identity that establish immediate market authority.",
@@ -172,6 +183,32 @@ export const siteContent = {
       ],
       edges: [["video", "cloud"], ["payments", "cloud"], ["ai", "cloud"], ["analytics", "cloud"], ["ai", "analytics"]],
     },
+  },
+
+  home: {
+    statement: {
+      kicker: "THE THAUMA MODEL",
+      text: "Great businesses need to be seen and trusted, and to run smoothly. Thauma builds both.",
+      highlight: ["trusted,", "smoothly.", "both."],
+    },
+    chapters: [
+      { id: "media", step: "Step 01", label: "Credibility & Visibility", title: "We manage your brand and socials, so your business looks as good as it is.",
+        story: "Customers decide in seconds whether to trust you. We handle your branding, content and social media so your business shows up professional, consistent and impossible to ignore.",
+        points: ["High-production video content", "Professional photography", "Visual brand identity", "Social media management and targeted ads"],
+        visual: "media", cta: { label: "See our media services", href: "/services" } },
+      { id: "tech", step: "Step 02", label: "Custom Solutions", title: "We are also a tech company. We build the systems your business runs on.",
+        story: "Visibility brings customers to the door. We do not stop at a website: we engineer custom software around the real bottlenecks in your operations.",
+        points: ["High-performance, SEO-optimised web apps", "Mobile Money and card payments built in", "Automated order tracking", "Custom features tailored to how you operate"],
+        visual: "web", cta: { label: "See our tech services", href: "/services" } },
+      { id: "hybrid", step: "Step 03", label: "Hybrid Packages", title: "Media and tech, combined to fit your business.",
+        story: "Most businesses start with a professional website linked to their socials. If your operations need more, and only if we deem it necessary, we add MoMo checkout, order tracking, AI integration or a custom AI agent.",
+        points: ["Professional website linked to your socials", "Mobile Money and card payments", "Order tracking and custom analytics", "AI integrations and agents, only where they help"],
+        visual: "packages", cta: { label: "Explore packages", href: "/services" } },
+      { id: "standalone", step: "Step 04", label: "Standalone Services", title: "Just need one thing? We do that too.",
+        story: "No retainer required. Hire us for a single job and get the same standard of work.",
+        points: ["Event photography and videography", "Graphic design", "Video and sound editing", "Custom software builds, project by project"],
+        visual: "standalone", cta: { label: "Discuss your project", href: "/work#contact" } },
+    ],
   },
 
   footer: {

@@ -1,13 +1,13 @@
 import { siteContent } from "@/content/siteContent";
 import Container from "@/components/ui/Container";
-import CoreServices from "@/components/services/CoreServices";
+import StackedChapters from "@/components/ui/StackedChapters";
 import PackagesSection from "@/components/services/PackagesSection";
 import OneOffServices from "@/components/services/OneOffServices";
 import TechStackGrid from "@/components/services/TechStackGrid";
 import ArchitectureBlueprint from "@/components/services/ArchitectureBlueprint";
 
 export default function Services() {
-  const { hero } = siteContent.servicesPage;
+  const { hero, chapters } = siteContent.servicesPage;
   return (
     <main>
       <section className="bg-navy pt-36 pb-20">
@@ -17,7 +17,7 @@ export default function Services() {
           <p className="mt-5 max-w-xl text-slate-300">{hero.sub}</p>
         </Container>
       </section>
-      <CoreServices />
+      <StackedChapters chapters={chapters} />
       <PackagesSection />
       <OneOffServices />
       <TechStackGrid />

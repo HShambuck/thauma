@@ -1,19 +1,17 @@
+import { siteContent } from "@/content/siteContent";
 import Hero from "@/components/home/Hero";
-import ServiceStrip from "@/components/home/ServiceStrip";
-import FrictionSection from "@/components/home/FrictionSection";
+import StatementScene from "@/components/home/StatementScene";
+import StackedChapters from "@/components/ui/StackedChapters";
 import Pillars from "@/components/home/Pillars";
-import EcosystemShowcase from "@/components/home/EcosystemShowcase";
 import CTAPortal from "@/components/home/CTAPortal";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <ServiceStrip />
-      <FrictionSection />
+      <StatementScene />
+      <StackedChapters chapters={siteContent.home.chapters} />
       <Pillars />
-      <EcosystemShowcase />
-      {/* Later: ImpactMetrics, TrustedBy */}
       <CTAPortal />
     </main>
   );
