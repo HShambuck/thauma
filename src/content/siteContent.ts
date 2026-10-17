@@ -59,6 +59,49 @@ export const siteContent = {
     { name: "Derrick Aduama", role: "Marketing & Growth Strategist", focus: "Market Acquisition, Advertising Funnels, Client Growth." },
   ],
 
+  friction: {
+    title: "Running a business manually is chaos.",
+    sub: "Scroll to watch Thauma turn the mess into a system.",
+    after: "Structured. Automated. Scaling.",
+    cards: [
+      "Lost DM leads", "Manual inventory tracking", "Unpolished phone videos",
+      "Missed payments", "Slow customer replies", "Scattered spreadsheets",
+    ],
+  },
+
+  pillars: {
+    title: "Two pillars. One growth engine.",
+    left: {
+      title: "Media & Visual Identity",
+      items: ["High-definition video reels", "Studio product photography", "Brand storytelling"],
+    },
+    right: {
+      title: "AI & Cloud Infrastructure",
+      items: ["Serverless web apps", "Autonomous AI agents", "Automated order tracking", "Custom analytics", "MoMo & card gateways"],
+    },
+  },
+
+  ecosystem: {
+    title: "See the whole engine in motion.",
+    sub: "From first impression to automated fulfilment.",
+    phases: [
+      { id: "brand", label: "Branding", title: "Raw footage becomes a studio-graded reel", lines: ["Raw clip imported", "Colour graded and sound mixed", "Reel published to Instagram and TikTok"] },
+      { id: "commerce", label: "Commerce", title: "Customers pay in seconds with MoMo", lines: ["Order placed on your web app", "MoMo prompt sent to customer", "Payment confirmed: GHS 450.00"] },
+      { id: "ai", label: "AI & Automation", title: "Your AI agent handles the follow-up", lines: ["Payment webhook received", "WhatsApp delivery alert sent", "CRM and analytics updated"] },
+    ],
+  },
+
+  cta: {
+    title: "Ready to scale your business?",
+    sub: "Tell us where you are. We will show you where the tech and media can take you.",
+    fields: { name: "Your name", contact: "Phone or email", message: "What are you trying to grow?" },
+    submit: "Send My Details",
+    sending: "Sending...",
+    success: "Thank you! We will reach out shortly.",
+    error: "Something went wrong. Please try again.",
+    bookLabel: "Book a 15-Min Strategy Call",
+  },
+
   footer: {
     blurb: "Engineering wonder, unlocking growth.",
     copyright: "Thauma Digital Solutions. All rights reserved.",
